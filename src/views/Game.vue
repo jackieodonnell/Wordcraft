@@ -52,7 +52,7 @@ export default {
     }
   },
   computed: {
-    threeWords() {
+    fourWords() {
       return this.$store.state.selectedWords
     }
   },
@@ -121,14 +121,14 @@ export default {
 #game-board {
   display: grid;
   height: 80vh;
-  margin-top: 10%;
-  margin-left: 5%;
-  margin-right: 5%;
+  margin-top: 3%;
+  margin-left: 0%;
+  width: 100%;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 15% 10% 38% 35%;
-  grid-template-areas:
-    "one two three four five"
+  grid-template-rows: 5% 11% 50% 30%;
+  grid-template-areas: 
     "clearbtn . . . submit"
+    "one two three four five"
     "set1 set2 set3 set4 set5"
     ". guesses guesses guesses .";
   justify-items: center;
@@ -221,5 +221,6 @@ export default {
   font-weight: 300;
   font-size: 1.2rem;
   border-bottom: 1px solid gray;
+  margin-top: 40px;
 }
 </style>

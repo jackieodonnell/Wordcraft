@@ -2325,15 +2325,16 @@ export default {
                 'rural',
                 'shave'
             ],
-            threeWords: [],
+            fourWords: [],
         }
     },
     created() {
         const index1 = Math.floor(Math.random() * this.words.length);
         const index2 = Math.floor(Math.random() * this.words.length);
         const index3 = Math.floor(Math.random() * this.words.length);
-        this.threeWords = [this.words[index1], this.words[index2], this.words[index3]];
-        this.$store.commit('SET_THREE_WORDS', this.threeWords)
+        const index4 = Math.floor(Math.random() * this.words.length);
+        this.fourWords = [this.words[index1], this.words[index2], this.words[index3], this.words[index4]];
+        this.$store.commit('SET_FOUR_WORDS', this.fourWords)
     },
 }
 </script>

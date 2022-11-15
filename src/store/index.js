@@ -2339,16 +2339,17 @@ export default new Vuex.Store({
   getters: {
   },
   mutations: {
-    SET_THREE_WORDS(state, wordArray) {
+    SET_FOUR_WORDS(state, wordArray) {
       state.selectedWords = wordArray;
       const word1 = wordArray[0];
       const word2 = wordArray[1];
       const word3 = wordArray[2];
-      state.letterSet1 = [word1.substring(0,1), word2.substring(0,1), word3.substring(0,1),];
-      state.letterSet2 = [word1.substring(1,2), word2.substring(1,2), word3.substring(1,2),];
-      state.letterSet3 = [word1.substring(2,3), word2.substring(2,3), word3.substring(2,3),];
-      state.letterSet4 = [word1.substring(3,4), word2.substring(3,4), word3.substring(3,4),];
-      state.letterSet5 = [word1.substring(4), word2.substring(4), word3.substring(4),]
+      const word4 = wordArray[3];
+      state.letterSet1 = [word1.substring(0,1), word2.substring(0,1), word3.substring(0,1), word4.substring(0,1)];
+      state.letterSet2 = [word1.substring(1,2), word2.substring(1,2), word3.substring(1,2), word4.substring(1,2)];
+      state.letterSet3 = [word1.substring(2,3), word2.substring(2,3), word3.substring(2,3), word4.substring(2,3)];
+      state.letterSet4 = [word1.substring(3,4), word2.substring(3,4), word3.substring(3,4), word4.substring(3,4)];
+      state.letterSet5 = [word1.substring(4), word2.substring(4), word3.substring(4), word4.substring(4)]
     },
     SET_SELECTION_1(state, selection1) {
       state.selectedLetter1 = selection1

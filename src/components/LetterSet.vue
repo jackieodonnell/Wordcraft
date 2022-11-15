@@ -3,6 +3,7 @@
     <letter-box id="choice1" v-bind:letter="choice1" v-bind:isCorrect="highlight1" v-bind:isSubmitted="guessed1" @click="toggleSelection(choice1)"/>
     <letter-box id="choice2" v-bind:letter="choice2" v-bind:isCorrect="highlight2" v-bind:isSubmitted="guessed2" @click="toggleSelection(choice2)"/>
     <letter-box id="choice3" v-bind:letter="choice3" v-bind:isCorrect="highlight3" v-bind:isSubmitted="guessed3" @click="toggleSelection(choice3)"/>
+    <letter-box id="choice3" v-bind:letter="choice4" v-bind:isCorrect="highlight4" v-bind:isSubmitted="guessed4" @click="toggleSelection(choice4)"/>
   </div>
 </template>
 
@@ -19,12 +20,15 @@ export default {
             choice1: "",
             choice2: "",
             choice3: "",
+            choice4: "",
             highlight1: false,
             highlight2: false,
             highlight3: false,
+            highlight4: false,
             guessed1: false,
             guessed2: false,
-            guessed3: false
+            guessed3: false,
+            guessed4: false,
         }
     },
     computed: {
@@ -46,6 +50,8 @@ export default {
                         this.highlight2 = true;
                     } else if (a1 == this.choice3 && !this.highlight3){
                         this.highlight3 = true;
+                    } else if (a1 == this.choice4 && !this.highlight4){
+                        this.highlight4 = true;
                     } 
                 } else if (this.setNumber == 2){
                     const a2 = this.$store.state.correctWords[newValue - 1].substring(1,2);
@@ -55,6 +61,8 @@ export default {
                         this.highlight2 = true;
                     } else if (a2 == this.choice3 && !this.highlight3){
                         this.highlight3 = true;
+                    } else if (a2 == this.choice4 && !this.highlight4){
+                        this.highlight4 = true;
                     } 
                 } else if (this.setNumber == 3){
                     const a3 = this.$store.state.correctWords[newValue - 1].substring(2,3);
@@ -64,6 +72,8 @@ export default {
                         this.highlight2 = true;
                     } else if (a3 == this.choice3 && !this.highlight3){
                         this.highlight3 = true;
+                    } else if (a3 == this.choice4 && !this.highlight4){
+                        this.highlight4 = true;
                     } 
                 } else if (this.setNumber == 4){
                     const a4 = this.$store.state.correctWords[newValue - 1].substring(3,4);
@@ -73,6 +83,8 @@ export default {
                         this.highlight2 = true;
                     } else if (a4 == this.choice3 && !this.highlight3){
                         this.highlight3 = true;
+                    } else if (a4 == this.choice4 && !this.highlight4){
+                        this.highlight4 = true;
                     } 
                 } else {
                     const a5 = this.$store.state.correctWords[newValue - 1].substring(4);
@@ -82,6 +94,8 @@ export default {
                         this.highlight2 = true;
                     } else if (a5 == this.choice3 && !this.highlight3){
                         this.highlight3 = true;
+                    } else if (a5 == this.choice4 && !this.highlight4){
+                        this.highlight4 = true;
                     } 
                 }
             }
@@ -97,7 +111,9 @@ export default {
                         this.guessed2 = true;
                     } else if (a1 == this.choice3 && !this.highlight3 && !this.guessed3){
                         this.guessed3 = true;
-                    } 
+                    } else if (a1 == this.choice4 && !this.highlight4 && !this.guessed4){
+                        this.guessed4 = true;
+                    }
                 } else if (this.setNumber == 2){
                     const a2 = this.$store.state.guessedWords[newValue - 1].substring(1,2);
                     if (a2 == this.choice1 && !this.highlight1 && !this.guessed1){
@@ -106,7 +122,9 @@ export default {
                         this.guessed2 = true;
                     } else if (a2 == this.choice3 && !this.highlight3 && !this.guessed3){
                         this.guessed3 = true;
-                    } 
+                    } else if (a2 == this.choice4 && !this.highlight4 && !this.guessed4){
+                        this.guessed4 = true;
+                    }
                 } else if (this.setNumber == 3){
                     const a3 = this.$store.state.guessedWords[newValue - 1].substring(2,3);
                     if (a3 == this.choice1 && !this.highlight1 && !this.guessed1){
@@ -115,7 +133,9 @@ export default {
                         this.guessed2 = true;
                     } else if (a3 == this.choice3 && !this.highlight3 && !this.guessed3){
                         this.guessed3 = true;
-                    } 
+                    } else if (a3 == this.choice4 && !this.highlight4 && !this.guessed4){
+                        this.guessed4 = true;
+                    }
                 } else if (this.setNumber == 4){
                     const a4 = this.$store.state.guessedWords[newValue - 1].substring(3,4);
                     if (a4 == this.choice1 && !this.highlight1 && !this.guessed1){
@@ -124,7 +144,9 @@ export default {
                         this.guessed2 = true;
                     } else if (a4 == this.choice3 && !this.highlight3 && !this.guessed3){
                         this.guessed3 = true;
-                    } 
+                    } else if (a4 == this.choice4 && !this.highlight4 && !this.guessed4){
+                        this.guessed4 = true;
+                    }
                 } else {
                     const a5 = this.$store.state.guessedWords[newValue - 1].substring(4);
                     if (a5 == this.choice1 && !this.highlight1 && !this.guessed1){
@@ -133,7 +155,9 @@ export default {
                         this.guessed2 = true;
                     } else if (a5 == this.choice3 && !this.highlight3 && !this.guessed3){
                         this.guessed3 = true;
-                    } 
+                    } else if (a5 == this.choice4 && !this.highlight4 && !this.guessed4){
+                        this.guessed4 = true;
+                    }
                 }
             }
             return false;
@@ -163,6 +187,7 @@ export default {
         this.choice1 = this.shuffledLetters[0];
         this.choice2 = this.shuffledLetters[1];
         this.choice3 = this.shuffledLetters[2];
+        this.choice4 = this.shuffledLetters[3];
     },
     methods: {
         toggleSelection(choice){
@@ -189,6 +214,17 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: fit-content;
+    width: fit-content;
+    padding-right: 5px;
+    padding-left: 5px;
+    padding-bottom: 5px;
+    margin-top: 5px;
+    border-left: 3px solid rgba(0, 0, 0, 0.512);
+    border-right: 3px solid rgba(0, 0, 0, 0.512);
+    border-top: 2px solid rgba(0, 0, 0, 0.512);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.512);
+    border-radius: 5px;
 }
 
 
