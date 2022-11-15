@@ -122,8 +122,8 @@ export default {
   display: grid;
   height: 80vh;
   margin-top: 3%;
-  margin-left: 0%;
-  width: 100%;
+  margin-left: 0px;
+  width: 95vw;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 5% 11% 50% 30%;
   grid-template-areas: 

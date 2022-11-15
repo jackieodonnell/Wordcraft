@@ -216,15 +216,17 @@ export default {
     align-items: center;
     height: fit-content;
     width: fit-content;
-    padding-right: 5px;
-    padding-left: 5px;
+    padding-right: 2px;
+    padding-left: 2px;
     padding-bottom: 5px;
     margin-top: 5px;
     border-left: 3px solid rgba(0, 0, 0, 0.512);
     border-right: 3px solid rgba(0, 0, 0, 0.512);
-    border-top: 2px solid rgba(0, 0, 0, 0.512);
-    border-bottom: 2px solid rgba(0, 0, 0, 0.512);
+    border-top: 2px solid rgba(20, 20, 20, 0.512);
+    border-bottom: 2px solid rgba(28, 28, 28, 0.512);
     border-radius: 5px;
+    box-shadow: 5px 10px 10px 1px rgb(16 39 112 / 10%);
+    background-color: rgba(218, 218, 218, 0.676);
 }
 
 
