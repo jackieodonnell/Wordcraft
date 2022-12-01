@@ -1,9 +1,8 @@
 <template>
   <div id="app">
-    <router-view/>
+    <router-view />
   </div>
 </template>
-
 
 <style>
 #app {
@@ -15,5 +14,9 @@
 }
 body {
   background-color: rgba(223, 224, 229, 0.697);
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
 }
 </style>
